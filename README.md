@@ -237,6 +237,25 @@ Project Backup Pilot is a Windows PowerShell toolkit created by Rafael Petri to 
 - Suporte a GitLab e Bitbucket.
 - Multiplos perfis de configuracao.
 
+## Colaboracoes
+
+Contribuicoes sao bem-vindas.
+
+Voce pode ajudar com:
+
+- relato de bugs
+- sugestoes de melhoria
+- documentacao
+- testes em diferentes versoes do Windows
+- melhorias de seguranca
+- pull requests com correcoes ou novas funcionalidades
+
+Antes de contribuir, leia:
+
+- `CONTRIBUTING.md`
+- `CODE_OF_CONDUCT.md`
+- `SECURITY.md`
+
 ## Autor
 
 **Rafael Petri**
