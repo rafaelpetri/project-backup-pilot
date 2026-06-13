@@ -1,0 +1,14 @@
+# Project Backup Pilot local files
+project-backup-pilot.json
+*.local.json
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,11 @@
+{
+  "ProjectRoot": "C:\\Projetos",
+  "RepoPrefix": "2026-",
+  "Visibility": "private",
+  "TaskName": "Project Backup Pilot",
+  "BackupIntervalHours": 1,
+  "IgnoredDirectories": [
+    "_git-backup",
+    ".stfolder"
+  ]
+}
