@@ -47,15 +47,54 @@ Se uma credencial ja foi commitada antes de usar esta ferramenta, rotacione essa
 
 A autenticacao no GitHub e feita pelo fluxo oficial do GitHub CLI via navegador/device login.
 
-## Inicio Rapido
+## Como Executar Baixando O ZIP
 
-Clone ou baixe este repositorio. Depois, no PowerShell, execute:
+Este e o caminho mais simples para quem nao usa Git ainda.
+
+1. Acesse o repositorio no GitHub:
+
+```text
+https://github.com/rafaelpetri/project-backup-pilot
+```
+
+2. Clique em `Code`.
+
+3. Clique em `Download ZIP`.
+
+4. Extraia o ZIP em uma pasta local. Exemplo recomendado:
+
+```text
+C:\Projetos\project-backup-pilot
+```
+
+5. Abra o PowerShell.
+
+6. Entre na pasta onde o ZIP foi extraido:
+
+```powershell
+cd C:\Projetos\project-backup-pilot
+```
+
+7. Execute o instalador:
 
 ```powershell
 powershell.exe -ExecutionPolicy Bypass -File .\scripts\Install-ProjectBackupPilot.ps1
 ```
 
-O instalador pergunta:
+## Como Executar Clonando Com Git
+
+Se voce ja usa Git, pode clonar o projeto:
+
+```powershell
+cd C:\Projetos
+git clone https://github.com/rafaelpetri/project-backup-pilot.git
+cd project-backup-pilot
+powershell.exe -ExecutionPolicy Bypass -File .\scripts\Install-ProjectBackupPilot.ps1
+```
+
+## O Que O Instalador Vai Perguntar
+
+Durante a instalacao, o assistente pergunta:
 
 - pasta raiz dos projetos, por exemplo `C:\Projetos`
 - prefixo dos repositorios, por exemplo `2026-`
@@ -63,6 +102,72 @@ O instalador pergunta:
 - intervalo do backup em horas
 - se deve criar atalho na Area de Trabalho
 - se deve instalar tarefa agendada
+
+Exemplo de respostas recomendadas:
+
+```text
+Pasta raiz dos projetos [C:\Projetos]:
+Prefixo dos repositorios GitHub [2026-]:
+Visibilidade dos repositorios (private/public) [private]:
+Nome da tarefa agendada [Project Backup Pilot]:
+Intervalo do backup em horas [1]:
+Criar atalho na Area de Trabalho? (S/N) [S]:
+Instalar tarefa agendada? (S/N) [S]:
+```
+
+Se voce apenas pressionar `Enter`, o instalador usa o valor padrao exibido entre colchetes.
+
+## Antes De Executar
+
+Confirme que Git e GitHub CLI estao instalados.
+
+No PowerShell, rode:
+
+```powershell
+git --version
+gh --version
+```
+
+Se algum comando nao existir, instale:
+
+- Git for Windows: `https://git-scm.com/download/win`
+- GitHub CLI: `https://cli.github.com/`
+
+Em maquinas com `winget`, voce tambem pode instalar assim:
+
+```powershell
+winget install --id Git.Git --exact
+winget install --id GitHub.cli --exact
+```
+
+## Login No GitHub
+
+Se o GitHub CLI ainda nao estiver autenticado, o instalador inicia o login automaticamente.
+
+Voce tambem pode fazer manualmente antes de executar:
+
+```powershell
+gh auth login --hostname github.com --web --git-protocol https
+```
+
+O GitHub CLI vai mostrar um codigo e uma URL. Abra a URL no navegador, informe o codigo e autorize o acesso.
+
+Para validar:
+
+```powershell
+gh auth status
+```
+
+## O Que Acontece Depois Da Instalacao
+
+Depois de instalado, o Project Backup Pilot cria:
+
+- arquivo de configuracao local `project-backup-pilot.json`
+- arquivo manual `Executar Project Backup Pilot.cmd` dentro da pasta raiz dos projetos
+- atalho na Area de Trabalho, se voce aceitar
+- tarefa agendada do Windows, se voce aceitar
+
+No primeiro backup, cada pasta de projeto e preparada e publicada no GitHub conforme as opcoes escolhidas.
 
 ## Backup Manual
 
