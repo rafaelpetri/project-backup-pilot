@@ -1,4 +1,4 @@
-# Project Backup Pilot local files
+﻿# Project Backup Pilot local files
 project-backup-pilot.json
 *.local.json
 
@@ -12,3 +12,56 @@ project-backup-pilot.json
 Thumbs.db
 .vscode/
 .idea/
+# --- git-backup safety rules ---
+# Local secrets and machine-specific environment files
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.exemple
+
+# PHP config files that commonly contain credentials. Commit *.example.php instead.
+**/config.php
+**/db.php
+**/conexaodb.php
+**/*conexao*.php
+**/whatsapp.php
+**/ai_config.php
+!**/*.example.php
+
+# Dependencies, build output, caches and logs
+**/node_modules/
+**/vendor/
+**/.next/
+**/.nuxt/
+**/dist/
+**/build/
+**/.vite/
+**/coverage/
+**/.cache/
+**/__pycache__/
+**/.venv/
+**/venv/
+**/bootstrap/cache/*.php
+**/storage/framework/cache/
+**/storage/framework/sessions/
+**/storage/framework/views/
+**/storage/logs/
+**/*.log
+
+# Large local backup archives. Keep these outside GitHub or back them up with a file backup tool.
+*.zip
+*.rar
+*.7z
+*.bak
+**/*.zip
+**/*.rar
+**/*.7z
+**/*.bak
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# --- end git-backup safety rules ---
+
