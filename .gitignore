@@ -38,6 +38,7 @@ Thumbs.db
 **/.vite/
 **/coverage/
 **/.cache/
+**/.gradle/
 **/__pycache__/
 **/.venv/
 **/venv/
@@ -53,10 +54,22 @@ Thumbs.db
 *.rar
 *.7z
 *.bak
+*.hprof
+*.apk
+*.jks
+*.keystore
+keystore.properties
+local.properties
 **/*.zip
 **/*.rar
 **/*.7z
 **/*.bak
+**/*.hprof
+**/*.apk
+**/*.jks
+**/*.keystore
+**/keystore.properties
+**/local.properties
 
 # OS/editor noise
 .DS_Store
